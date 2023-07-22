@@ -75,9 +75,9 @@ export PLACENL_SUBSCRIBE_STATS="false"
 export PLACENL_PINGPONG="false"
 ```
 
-# Runnning Henk
+# Runnning Headless-UK
 
-You can run henk in 3 ways. Using [poetry](https://python-poetry.org/docs/), [pip](https://pypi.org/project/pip/)
+You can run Headless-UK in 3 ways. Using [poetry](https://python-poetry.org/docs/), [pip](https://pypi.org/project/pip/)
 or [docker](https://www.docker.com/).
 
 ## Poetry
