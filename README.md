@@ -119,7 +119,7 @@ running `python3.10`, run `python --version`. Henk won't work with lower python 
 ```bash
 python -m venv .venv
 . .venv/bin/activate
-python gaanmetdiebanaan.py
+python index.py
 ```
 
 
