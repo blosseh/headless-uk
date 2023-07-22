@@ -1,6 +1,7 @@
 # Headless UK
 
 A headless [placeUK](https://github.com/g3vv/headless-uk) client written in [python](https://www.python.org/) 3.10.
+Credit to [Headless-Henk](https://github.com/tintin10q/headless-henk) and PlaceNL
 
 # Configuration
 
