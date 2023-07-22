@@ -81,7 +81,8 @@ You can run Headless-UK in 3 ways. Using [poetry](https://python-poetry.org/docs
 
 ## Poetry
 
-To install the dependencies run `poetry install`
+1. First install the dependencies by running `poetry install`  
+2. run `poetry run gaanmetdiebanaan`
 
 ### Instaling poetry 
 
