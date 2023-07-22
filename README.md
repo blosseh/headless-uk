@@ -100,7 +100,7 @@ If you have problems with poetry just delete `poetry.lock` and try again.
 ## Using Pip
 
 If you do not want to use poetry you can also just make a virtual environment yourself. Ensure you are
-running `python3.10`, run `python --version`. Henk won't work with lower python than 3.10.
+running `python3.10`, run `python --version`. Headless-UK won't work with lower python than 3.10.
 
 ```bash
 python -m venv .venv
