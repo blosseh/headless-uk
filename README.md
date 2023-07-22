@@ -119,7 +119,7 @@ running `python3.10`, run `python --version`. Headless-UK won't work with lower 
 ```bash
 python -m venv .venv
 . .venv/bin/activate
-python index.py
+python gaanmetdiebanaan.py
 ```
 
 
