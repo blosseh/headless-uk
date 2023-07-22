@@ -77,7 +77,7 @@ export PLACENL_PINGPONG="false"
 
 # Runnning Headless-UK
 
-You can run Headless-UK in 3 ways. Using [poetry](https://python-poetry.org/docs/) or [pip](https://pypi.org/project/pip/).
+You can run Headless-UK in 3 ways. Using [poetry](https://python-poetry.org/docs/), [pip](https://pypi.org/project/pip/) or docker.
 
 ## Poetry
 
