@@ -99,19 +99,6 @@ If you have problems with poetry just delete `poetry.lock` and try again.
 
 **Start the client with `poetry run gaanmetdiebanaan`**
 
-## Docker
-
-There is also a docker available at: [ghcr.io/tintin10q/headless-henk:latest](ghcr.io/tintin10q/headless-henk:latest).
-This docker supports every linux architecture you can imagine, so you can use your (old) Raspberry Pi as wel!
-
-For easy use, use docker compose:
-
-`docker compose up -d`
-
-edit the `config/config.toml` with you config. After editing, run `docker compose restart`.
-
-To stop the compose, run `docker compose down`
-
 ## Using Pip
 
 If you do not want to use poetry you can also just make a virtual environment yourself. Ensure you are
@@ -120,7 +107,7 @@ running `python3.10`, run `python --version`. Headless-UK won't work with lower 
 ```bash
 python -m venv .venv
 . .venv/bin/activate
-python gaanmetdiebanaan.py
+python index.py
 ```
 
 
