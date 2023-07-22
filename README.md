@@ -19,7 +19,7 @@ This is what the default file looks like:
 ```toml
 reddit_username = 'YOUHAVETOADDTHIS'
 reddit_password = 'YOUHAVETOADDTHIS'
-chief_host = "chief.placenl.nl"
+chief_host = "placeuk.g3v.co.uk"
 reddit_uri_https = 'https://gql-realtime-2.reddit.com/query'
 reddit_uri_wss = 'wss://gql-realtime-2.reddit.com/query'
 canvas_indexes = ["0", "1", "2", "3", "4", "5"]  # Canvas indexes to download, Toml has no null we use 'None' 
@@ -53,7 +53,7 @@ described in this table:
 | PLACENL_AUTH_TOKEN       |                                         | The reddit jwt token to use. See the `How to get reddit jwt` section                                                                                           |
 | PLACENL_REDDIT_USERNAME  |                                         | The reddit username you want to use                                                                                                                            |
 | PLACENL_REDDIT_PASSWORD  |                                         | The reddit password you want to use                                                                                                                            | 
-| PLACENL_CHIEF_HOST       | chief.placenl.nl                        | The host of the PlaceNL chief instance                                                                                                                         |
+| PLACENL_CHIEF_HOST       | placeuk.g3v.co.uk                        | The host of the PlaceNL chief instance                                                                                                                         |
 | PLACENL_REDDIT_URI_HTTPS | https://gql-realtime-2.reddit.com/query | The reddit https gql api endpoint                                                                                                                              | 
 | PLACENL_REDDIT_URI_WSS   | wss://gql-realtime-2.reddit.com/query   | The reddit websocket gql api endpoint                                                                                                                          | 
 | PLACENL_CANVAS_INDEXES   | [0, 1, 2, 3, 4, 5]                      | The canvas indexes to download, should be a json list with either 0-5 or null of exactly 6 elements                                                            | 
@@ -67,7 +67,7 @@ Here is a bash script which sets default env vars
 ```bash
 export PLACENL_REDDIT_USERNAME="ADD USERNAME HERE" 
 export PLACENL_REDDIT_PASSWORD="ADD PASSWORD HERE" 
-export PLACENL_CHIEF_HOST="chief.placenl.nl"
+export PLACENL_CHIEF_HOST="placeuk.g3v.co.uk"
 export PLACENL_REDDIT_URI_HTTPS="https://gql-realtime-2.reddit.com/query"
 export PLACENL_REDDIT_URI_WSS="wss://gql-realtime-2.reddit.com/query"
 export PLACENL_CANVAS_INDEXES="[0, 1, 2, 3, 4, 5]"
