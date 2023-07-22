@@ -1,10 +1,10 @@
-# Headless Henk
+# Headless UK
 
-A headless [placeNL](https://github.com/PlaceNL/Chief) client written in [python](https://www.python.org/) 3.10.
+A headless [placeUK](https://github.com/g3vv/headless-uk) client written in [python](https://www.python.org/) 3.10.
 
 # Configuration
 
-You can configure Henk with using a [toml](https://toml.io/) file or using env vars.
+You can configure Headless-UK with using a [toml](https://toml.io/) file or using env vars.
 
 ## Toml Config File
 
