@@ -5,7 +5,7 @@ A headless [placeUK](https://github.com/g3vv/headless-uk) client written in [pyt
 
 # Simple Install
 
-1. Install Python - https://www.python.org/
+1. Install Python - https://www.python.org/ <<< **IMPORTANT**
 2. Download a zip of the script - https://github.com/G3VV/headless-uk/archive/refs/heads/main.zip
 3. Unzip it inside a folder
 4. Run `pip install -r requirements.txt`, this installs all the required stuff. (might need to do `pip install -r requirements.txt --user` or `python pip install -r requirements.txt`)
