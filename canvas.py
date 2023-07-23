@@ -1,7 +1,6 @@
 import asyncio
 from typing import List, Literal, Tuple
 
-import httpx
 from io import BytesIO
 
 import requests
@@ -9,20 +8,20 @@ from PIL import Image
 
 import reddit
 from colors import GREEN, AQUA, RESET, printc, BLUE
-from now import now
+from now import now_usr
 
 
-async def get_canvas_part(canvas_id: Literal[0, 1, 2, 3, 4, 5]):
-    canvas_url = await reddit.get_canvas_url(canvas_id)
+async def get_canvas_part(canvas_id: Literal[0, 1, 2, 3, 4, 5], username: str = None):
+    canvas_url = await reddit.get_canvas_url(canvas_id, username=username)
     # async with httpx.AsyncClient() as client:
     #     response = await client.get(canvas_url)
-    printc(f'{now()} {GREEN}Downloading canvas from {BLUE}{canvas_url}')
+    printc(f'{now_usr(username=username)} {GREEN}Downloading canvas from {BLUE}{canvas_url}')
     response = requests.get(canvas_url)
     # response.raise_for_status()
     return Image.open(BytesIO(response.content))
 
 
-async def build_canvas_image(image_ids: List[Literal[0, 1, 2, 3, 4, 5, None]]) -> Image.Image:
+async def build_canvas_image(image_ids: List[Literal[0, 1, 2, 3, 4, 5, None]], username: str = None) -> Image.Image:
     """
     Builds the complete canvas image by stacking the available parts.
 
@@ -32,6 +31,7 @@ async def build_canvas_image(image_ids: List[Literal[0, 1, 2, 3, 4, 5, None]]) -
 
     Returns:
         Image.Image: A PIL Image object representing the complete canvas image.
+        :param username: username of user building the canvas
     """
     if not image_ids:
         raise ValueError("The image_ids list should not be empty.")
@@ -40,7 +40,7 @@ async def build_canvas_image(image_ids: List[Literal[0, 1, 2, 3, 4, 5, None]]) -
 
     for i, image_id in enumerate(image_ids):
         if image_id is not None:
-            canvas_part = await get_canvas_part(image_id)
+            canvas_part = await get_canvas_part(image_id, username=username)
             canvas_parts[i] = canvas_part
 
     # Calculate the size of the final canvas image.
@@ -79,18 +79,6 @@ def download_and_save_canvas():
 
 
 def xy_to_canvasIndex(x: int, y: int) -> Literal[0, 1, 2, 3, 4, 5]:
-    if x < 1000 and y < 1000: return 0
-    if x < 1000 and y >= 1000: return 3
-    if 1000 >= x < 2000 and y < 1000: return 1
-    if 2000 > x <= 1000 and 1000 <= y: return 4
-    if 2000 >= x and y < 1000: return 2
-    if 2000 >= x and y >= 1000: return 5
-
-
-from typing import Literal
-
-
-def xy_to_canvasIndex(x: int, y: int) -> Literal[0, 1, 2, 3, 4, 5]:
     if x < 1000 and y < 1000:
         return 0
     elif 1000 <= x < 2000 and y < 1000:
@@ -125,8 +113,10 @@ color_names = ['N/A - #6D001A', 'N/A - #BE0039', 'Red', 'Orange', 'Yellow', 'N/A
                'N/A - #493AC1', 'N/A - #6A5CFF', 'N/A - #94B3FF', 'Dark purple', 'Light purple',
                'N/A - #E4ABFF', 'N/A - #DE107F', 'N/A - #FF3881', 'Light pink', 'N/A - #6D482F', 'Brown', 'N/A - #FFB470', 'Black', 'N/A - #515252', 'Gray', 'Light gray', 'White']
 
+
 def colorIndex_to_name(colorIndex: int) -> str:
     return color_names[colorIndex]
+
 
 def colorTuple_to_colorIndex(colorTuple: Tuple[int, int, int, int]) -> int:
     hexcode = rgba_to_hex(colorTuple)
