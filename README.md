@@ -52,74 +52,6 @@ See the `How to get a reddit jwt token` section for information on how to get a 
 > Note that in the toml file the `canvas_indexes` are all strings. In the env var this different and it is a json array
 > of numbers and null.
 
-## Env Vars
-
-To use env vars you first have to set either the `PLACENL_AUTH_TOKEN` or both `PLACENL_REDDIT_USERNAME` and `PLACENL_REDDIT_PASSWORD`.
-If the `PLACENL_AUTH_TOKEN` or both `PLACENL_REDDIT_USERNAME` and `PLACENL_REDDIT_PASSWORD` env var are set then any config.toml file is ignored, and you can set the other vars as
-described in this table:
-
-| Name                     | Default                                 | Description                                                                                                                                                    |   
-|--------------------------|-----------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| PLACENL_AUTH_TOKEN       |                                         | The reddit jwt token to use. See the `How to get reddit jwt` section                                                                                           |
-| PLACENL_REDDIT_USERNAME  |                                         | The reddit username you want to use                                                                                                                            |
-| PLACENL_REDDIT_PASSWORD  |                                         | The reddit password you want to use                                                                                                                            | 
-| PLACENL_CHIEF_HOST       | placeuk.g3v.co.uk                        | The host of the PlaceNL chief instance                                                                                                                         |
-| PLACENL_REDDIT_URI_HTTPS | https://gql-realtime-2.reddit.com/query | The reddit https gql api endpoint                                                                                                                              | 
-| PLACENL_REDDIT_URI_WSS   | wss://gql-realtime-2.reddit.com/query   | The reddit websocket gql api endpoint                                                                                                                          | 
-| PLACENL_CANVAS_INDEXES   | [0, 1, 2, 3, 4, 5]                      | The canvas indexes to download, should be a json list with either 0-5 or null of exactly 6 elements                                                            | 
-| PLACENL_SUBSCRIBE_STATS  | false                                   | Whether the client should subscribe to stats updates from chief. Stats are always shown once on startup. Valid values are t, true, f, false (case insensitive) |
-| PLACENL_PINGPONG         | false                                   | Whether the client should show ping and pong messages.                                                                                                         |
-
-Because of the defaults you only have to set `PLACENL_AUTH_TOKEN`.
-
-Here is a bash script which sets default env vars
-
-```bash
-export PLACENL_REDDIT_USERNAME="ADD USERNAME HERE" 
-export PLACENL_REDDIT_PASSWORD="ADD PASSWORD HERE" 
-export PLACENL_CHIEF_HOST="placeuk.g3v.co.uk"
-export PLACENL_REDDIT_URI_HTTPS="https://gql-realtime-2.reddit.com/query"
-export PLACENL_REDDIT_URI_WSS="wss://gql-realtime-2.reddit.com/query"
-export PLACENL_CANVAS_INDEXES="[0, 1, 2, 3, 4, 5]"
-export PLACENL_SUBSCRIBE_STATS="false"
-export PLACENL_PINGPONG="false"
-```
-
-# Runnning Headless-UK
-
-You can run Headless-UK in 3 ways. Using [poetry](https://python-poetry.org/docs/), [pip](https://pypi.org/project/pip/) or docker.
-
-## Poetry
-
-1. First install the dependencies by running `poetry install`  
-2. run `poetry run gaanmetdiebanaan`
-
-### Instaling poetry 
-
-If you don't have [poetry](https://python-poetry.org/docs/) then install it with:
-
-> **Linux Debian/Ubuntu based**:  `apt install python3-poetry`
- 
-> **Linux other** `curl -sSL https://install.python-poetry.org | python3 -`
-
-> **Windows**: `(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | py -`
-
-If you have problems with poetry just delete `poetry.lock` and try again.
-
-**Start the client with `poetry run gaanmetdiebanaan`**
-
-## Using Pip
-
-If you do not want to use poetry you can also just make a virtual environment yourself. Ensure you are
-running `python3.10`, run `python --version`. Headless-UK won't work with lower python than 3.10.
-
-```bash
-python -m venv .venv
-. .venv/bin/activate
-python index.py
-```
-
-
 # How to get reddit jwt?
 
 The easiest way is to just run `login.py` to get a token. This will also automatically add the token to the `config.toml`.
@@ -139,20 +71,9 @@ You can also go to the website:
 9. Copy the value of the authorization header. It should start with `Bearer ` and then a bunch of letters seperated.
 
 > Realize that these tokens are valid for about 1440 minutes. There is no auto token refresh functionality yet. This is
-> also because I don't know how reddit refreshes their tokens. Let me know if you konw.
+> also because I don't know how reddit refreshes their tokens. Let me know if you koow.
 
 **Be sure to not share this jwt with others!**
-
-
-# Downloading the Canvas
-
-As a bonus feature you can run
-
-```bash
-poetry run downloadcanvas
-``` 
-
-to download the canvas. You don't have to put your auth token in `config.toml` for this to work.
 
 <br>
 <br>
