@@ -8,7 +8,7 @@ A headless [placeUK](https://github.com/g3vv/headless-uk) client written in [pyt
 1. Install Python - https://www.python.org/
 2. Download a zip of the script - https://github.com/G3VV/headless-uk/archive/refs/heads/main.zip
 3. Unzip it inside a folder
-4. Run `pip install -r requirements.txt`, this installs all the required stuff.
+4. Run `pip install -r requirements.txt`, this installs all the required stuff. (might need to do `pip install -r requirements.txt --user` or `python pip install -r requirements.txt`)
 5. Run `python index.py`
 6. A file should be automatically created called `config.toml`, configure the settings inside it (see below)
 7. Once `config.toml` is configured run `python index.py` again.
