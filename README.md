@@ -16,6 +16,36 @@ A headless [placeUK](https://github.com/g3vv/headless-uk) client written in [pyt
 
 If you encounter any issues join our [Discord](https://discord.gg/ukplace) and ask for help in #script-help
 
+# Configuration
+
+You can configure headless-uk with using a config [toml](https://toml.io/) file or using env vars.
+
+**You can place 1 account in this configuration. If you want to use multiple accounts in the same process you have to
+use an `accounts.toml`.**
+
+- You can configure the name of the `accounts.toml` with the `--accounts` flag.
+- You can configure the name of the `config.toml` with the `--config` flag.
+
+## Accounts Toml File
+
+The [accounts.toml](accounts.toml) file is very simple. It is just `username="password"` on every line. Like this:
+
+```toml
+username1 = "password1"
+username2 = "password2"
+username3 = "password3"
+```
+
+If you have weird characters in your username then this is also a valid accounts.toml:
+
+```toml
+"us.er.name1" = "password1"
+"us er name2" = "password2"
+username3 = "password3"
+```
+
+You can configure the name of the `accounts.toml` with the `--accounts` flag.
+
 ## Toml Config File
 
 You can set the options in a toml configuration file. By default, this file is [config.toml](config.toml) in the same
