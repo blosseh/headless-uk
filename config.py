@@ -26,7 +26,7 @@ class Brand(TypedDict):
     name: str
 
 
-default_chief_host = 'placeuk.g3v.co.uk'
+default_chief_host = 'ukon.place'
 
 default_reddit_uri_https = 'https://gql-realtime-2.reddit.com/query'
 default_reddit_uri_wss = 'wss://gql-realtime-2.reddit.com/query'
