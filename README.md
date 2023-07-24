@@ -1,6 +1,6 @@
-# Headless UK
+# Headless UK 2 Electric Boogaloo
 
-A headless [placeUK](https://github.com/g3vv/headless-uk) client written in [python](https://www.python.org/) 3.10.
+A fork of the headless [placeUK](https://github.com/g3vv/headless-uk) client written in [python](https://www.python.org/) 3.10.
 > Credit to [Headless-Henk](https://github.com/tintin10q/headless-henk) and PlaceNL
 
 # Simple Install
@@ -14,7 +14,7 @@ A headless [placeUK](https://github.com/g3vv/headless-uk) client written in [pyt
 7. Once `config.toml` is configured run `python index.py` again.
 8. and you should be finished and the script should be running on your account!
 
-If you encounter any issues join our [Discord](https://discord.gg/3vApPb6mxj) and ask for help in #script-support
+If you encounter any issues join our [Discord](https://discord.gg/ukplace) and ask for help in #script-support
 
 # Configuration
 
@@ -59,7 +59,7 @@ This is what the default file looks like:
 ```toml
 reddit_username = 'YOUHAVETOADDTHIS'
 reddit_password = 'YOUHAVETOADDTHIS'
-chief_host = "placeuk.g3v.co.uk"
+chief_host = "ukon.place"
 reddit_uri_https = 'https://gql-realtime-2.reddit.com/query'
 reddit_uri_wss = 'wss://gql-realtime-2.reddit.com/query'
 canvas_indexes = ["0", "1", "2", "3", "4", "5"]  # Canvas indexes to download, Toml has no null we use 'None' 
